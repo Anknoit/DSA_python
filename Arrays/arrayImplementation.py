@@ -14,7 +14,7 @@ class Array:
         return self.arr[index]
     def __setitem__(self, index, value):
         if index<0 or index>self.length:
-            raise IndexError("Index is out of range")
+            raise IndexError("Index is out of range!")
         self.arr[index] = value
     
     def resize(self):
