@@ -22,7 +22,7 @@ class Array:
         new_arr = [0]*self.capacity
         for i in range(self.length):
             new_arr[i] = self.arr[i]
-        self.arr = new_arr
+        self.arr = new_arr # Copying old array to new array
     
     def append(self, value):
         if self.length == self.capacity:
@@ -36,7 +36,7 @@ class Array:
         if self.length == self.capacity:
             resize()
         for i in range(self.length, index, -1):
-            self.arr[i] = self.arr[i-1]
+            self.arr[i] = self.arr[i-1]  # Left shift
         self.arr[index] = value
         self.length += 1
 
@@ -44,7 +44,7 @@ class Array:
         for i in range(self.length):
             if self.arr[i] == value:
                 for j in range(i, self.length-1):
-                    self.arr[j] = self.arr[j+1]
+                    self.arr[j] = self.arr[j+1]  # Right Shift
                 self.length -= 1
                 return
         raise ValueError("Value is not found")
